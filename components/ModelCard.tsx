@@ -13,37 +13,34 @@ function ArrowRight() {
 
 export function ActiveModelCard({ className = "" }: { className?: string }) {
   return (
-    <Card noPadding className={`flex flex-row ${className}`}>
-      <div className="flex-1 p-3 flex flex-col justify-between min-w-0">
-        <SectionLabel label="ACTIVE MODEL" />
-        <div>
-          <p className="text-[13px] font-medium text-text leading-snug">
-            {ACTIVE_MODEL.company}
-          </p>
-          <p className="text-[11px] text-muted mt-1 line-clamp-2">
-            {ACTIVE_MODEL.description}
-          </p>
-          <div className="flex flex-wrap gap-1 mt-2">
-            {ACTIVE_MODEL.methods.slice(0, 3).map((m) => (
-              <span
-                key={m}
-                className="text-[10px] font-medium bg-tag-bg text-tag-text px-1.5 py-px rounded"
-              >
-                {m}
-              </span>
-            ))}
-          </div>
+    <Card className={`flex flex-col justify-between !p-3 ${className}`}>
+      <SectionLabel label="ACTIVE MODEL" />
+      <div>
+        <p className="text-[18px] font-medium text-text leading-tight">
+          {ACTIVE_MODEL.company}
+        </p>
+        <p className="text-[14px] text-muted mt-1.5 line-clamp-2">
+          {ACTIVE_MODEL.description}
+        </p>
+        <div className="flex flex-wrap gap-1 mt-2">
+          {ACTIVE_MODEL.methods.slice(0, 3).map((m) => (
+            <span
+              key={m}
+              className="text-[12px] font-medium bg-tag-bg text-tag-text px-2 py-0.5 rounded"
+            >
+              {m}
+            </span>
+          ))}
         </div>
-        <a
-          href={ACTIVE_MODEL.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[11px] text-muted hover:text-text transition-colors mt-2"
-        >
-          View model <ArrowRight />
-        </a>
       </div>
-      <div className="w-[42%] bg-[#F2F2F2] border-l border-border shrink-0" />
+      <a
+        href={ACTIVE_MODEL.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 text-[14px] text-muted hover:text-text transition-colors mt-2"
+      >
+        View model <ArrowRight />
+      </a>
     </Card>
   );
 }

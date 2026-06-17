@@ -49,10 +49,10 @@ export default function NewsletterCard({ className = "" }: { className?: string 
       <BookmarkIcon />
 
       <div className="min-h-0">
-        <h2 className="text-[12px] font-semibold text-text leading-snug">
+        <h2 className="text-[18px] font-semibold text-text leading-tight">
           Subscribe to my newsletter
         </h2>
-        <p className="text-[10px] text-muted mt-0.5 leading-snug line-clamp-2">
+        <p className="text-[14px] text-muted mt-1 leading-snug line-clamp-2">
           Analytics reports and product updates infrequently.
         </p>
       </div>
@@ -65,7 +65,7 @@ export default function NewsletterCard({ className = "" }: { className?: string 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="name@email.com"
-            className="flex-1 min-w-0 bg-transparent text-[10px] text-text placeholder:text-muted outline-none"
+            className="flex-1 min-w-0 bg-transparent text-[12px] text-text placeholder:text-muted outline-none"
           />
           <button
             type="submit"

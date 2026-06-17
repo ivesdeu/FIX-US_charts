@@ -2,7 +2,7 @@ export const SITE = {
   name: "Mark Deutschmann",
   descriptor: "MSF · Investment Management Certificate Program · Founder",
   email: "mark@ivesdeu.com",
-  calUrl: "https://cal.com/mark-deutschmann",
+  calUrl: "https://cal.com/markdeu",
   resumeHref: "/Deutschmann_Mark_Resume_2026.pdf",
   headshot: "/mark-headshot.png",
   linkedin: "https://linkedin.com/in/markdeutschmann",
@@ -29,7 +29,7 @@ export const RESEARCH: ResearchRow[] = [
     ticker: "FIX",
     company: "Comfort Systems USA",
     thesis:
-      "~70% downside; HVAC premium unsupported by fundamentals at current multiples.",
+      "~70% downside; HVAC premium unsupported by model.",
     rating: "SELL",
     date: "June 2025",
     pdfHref: "/research/fix-report.pdf",
@@ -37,8 +37,8 @@ export const RESEARCH: ResearchRow[] = [
   {
     ticker: "ABBV",
     company: "AbbVie",
-    thesis: "Thesis pending",
-    rating: null,
+    thesis: "Buy thesis",
+    rating: "BUY",
     date: "May 2025",
     pdfHref: "/research/abbv-report.pdf",
   },
@@ -70,6 +70,7 @@ export type Venture = {
   name: string;
   description: string;
   href: string | null;
+  image?: string;
 };
 
 export const VENTURES: Venture[] = [
@@ -78,12 +79,14 @@ export const VENTURES: Venture[] = [
     description:
       "Digital marketing and web development for small businesses",
     href: "https://ivesdeu.com",
+    image: "/ventures/idm-logo.png",
   },
   {
     name: "Compass",
     description:
       "CRM and business OS for 1–10 person professional services firms",
     href: "https://compass.ivesdeu.com",
+    image: "/ventures/compass-dashboard.png",
   },
 ];
 
@@ -97,3 +100,10 @@ export const NOW = {
     href: "https://open.spotify.com",
   },
 };
+
+export const AWARDS = [
+  "Student Organization Leader of the Year · 2026 UWM Student Excellence Awards",
+  "Best Event of the Year · 2026 UWM Student Excellence Awards — AMA Regional Conference",
+  "La Macchia New Venture Competition · Winner · $5,000 · March 2026",
+  "Lubar 25 Scholarship · Top 25 students, Lubar College of Business · March 2025",
+];

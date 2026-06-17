@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Card from "@/components/Card";
-import { BIO, SITE } from "@/lib/content";
+import { BIO } from "@/lib/content";
 
 function MenuIcon() {
   return (
@@ -15,20 +14,8 @@ function MenuIcon() {
 export default function BioCard({ className = "" }: { className?: string }) {
   return (
     <Card className={`flex flex-col !p-3 ${className}`}>
-      <div className="flex items-start justify-between shrink-0">
-        <MenuIcon />
-        <div className="relative w-6 h-6 rounded-full overflow-hidden shrink-0">
-          <Image
-            src={SITE.headshot}
-            alt=""
-            width={24}
-            height={24}
-            className="object-cover size-full"
-            aria-hidden
-          />
-        </div>
-      </div>
-      <p className="text-[11px] leading-[1.5] text-text mt-2 flex-1 min-h-0 overflow-y-auto">
+      <MenuIcon />
+      <p className="text-[12px] leading-[1.38] text-text mt-2">
         {BIO}
       </p>
     </Card>

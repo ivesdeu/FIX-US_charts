@@ -10,7 +10,7 @@ body {
 }
 
 .label-meta {
-  @apply text-[11px] uppercase tracking-[0.06em] text-muted font-medium;
+  @apply text-[12px] uppercase tracking-[0.06em] text-muted font-medium;
 }
 
 .bento-grid {
@@ -34,6 +34,10 @@ body {
   aspect-ratio: 3 / 1;
 }
 
+.bento-full-width {
+  width: 100%;
+}
+
 @media (min-width: 640px) {
   .bento-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -48,6 +52,10 @@ body {
   }
 
   .bento-3x1 {
+    grid-column: span 3 / span 3;
+  }
+
+  .bento-full-width {
     grid-column: span 3 / span 3;
   }
 }

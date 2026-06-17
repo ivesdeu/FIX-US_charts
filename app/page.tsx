@@ -8,6 +8,7 @@ import ResearchCard from "@/components/ResearchCard";
 import ResumeCard from "@/components/ResumeCard";
 import { ActiveModelCard } from "@/components/ModelCard";
 import VentureCard from "@/components/VentureCard";
+import AwardsCard from "@/components/AwardsCard";
 import { VENTURES } from "@/lib/content";
 
 export default function Home() {
@@ -29,11 +30,8 @@ export default function Home() {
         <VentureCard venture={VENTURES[0]} className="bento-1x1" />
         <VentureCard venture={VENTURES[1]} className="bento-1x1" />
         <ResearchCard className="bento-2x1" />
+        <AwardsCard className="bento-full-width" />
       </div>
-
-      <footer className="text-center text-[12px] text-muted pt-8 pb-6">
-        © 2026 Mark Deutschmann · Milwaukee, WI
-      </footer>
     </main>
   );
 }

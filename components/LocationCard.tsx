@@ -44,11 +44,11 @@ export default function LocationCard({ className = "" }: { className?: string })
       </div>
 
       <div className="flex-1 flex items-center justify-center min-h-0 w-full">
-        <div className="aspect-square h-full max-w-full">
+        <div className="aspect-square h-full max-w-full scale-125">
           <GlobeCdn
             markers={MILWAUKEE_MARKERS}
             arcs={[]}
-            speed={0.002}
+            speed={0.006}
             hideOverlays
             className="size-full"
           />
@@ -56,10 +56,10 @@ export default function LocationCard({ className = "" }: { className?: string })
       </div>
 
       <div className="shrink-0">
-        <p className="text-[13px] font-semibold text-text leading-tight">
+        <p className="text-[20px] font-semibold text-text leading-tight">
           Milwaukee, Wisconsin
         </p>
-        <p className="text-[12px] text-muted mt-0.5">
+        <p className="text-[17px] text-muted mt-1">
           {weather !== null
             ? `${weather.temperature}° ${weather.condition}`
             : "—"}

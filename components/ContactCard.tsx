@@ -27,12 +27,12 @@ export default function ContactCard({ className = "" }: { className?: string }) 
     <Card className={`flex flex-col justify-between !p-3 ${className}`}>
       <MailIcon />
       <button onClick={handleCopy} className="text-left w-full mt-auto">
-        <p className="text-[13px] font-medium text-text leading-snug">
+        <p className="text-[20px] font-medium text-text leading-tight">
           {user}
           <br />
           @{domain}
         </p>
-        <p className="text-[11px] text-muted mt-1.5 h-4">
+        <p className="text-[17px] text-muted mt-2 h-6">
           {copied ? "Copied to clipboard" : "Click to copy"}
         </p>
       </button>

@@ -42,15 +42,18 @@ export default function HeroCard() {
 
   return (
     <section className="text-center pt-6 pb-8">
-      <p className="label-meta mb-8">{time}</p>
+      <p className="mb-8 font-mono text-[12px] font-semibold tracking-[0.12em] text-[#8E8E8E]">
+        {time}
+      </p>
 
       <div className="relative flex flex-col items-center">
         <h1 className="sr-only">{SITE.name}</h1>
         <p
           aria-hidden
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-[clamp(2.5rem,8vw,4.5rem)] font-semibold text-[#E8E8E8] select-none pointer-events-none whitespace-nowrap"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-[clamp(2.5rem,8vw,4.5rem)] font-semibold leading-[0.85] text-[#E8E8E8] select-none pointer-events-none"
         >
-          {SITE.name}
+          <span className="block">Mark</span>
+          <span className="block">Deutschmann</span>
         </p>
         <div className="relative z-10 w-[100px] h-[100px] rounded-full border-4 border-white shadow-sm overflow-hidden">
           <Image

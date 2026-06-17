@@ -22,8 +22,8 @@ export default function ResumeCard({ className = "" }: { className?: string }) {
         rel="noopener noreferrer"
         className="mt-auto"
       >
-        <p className="text-[13px] font-medium text-text">Resume</p>
-        <p className="text-[11px] text-muted mt-0.5">PDF · 2026</p>
+        <p className="text-[20px] font-medium text-text leading-tight">Resume</p>
+        <p className="text-[17px] text-muted mt-1">PDF · 2026</p>
       </a>
     </Card>
   );

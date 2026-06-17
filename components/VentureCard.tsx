@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Card from "@/components/Card";
 import { type Venture } from "@/lib/content";
 
@@ -20,15 +21,25 @@ export default function VentureCard({
 }) {
   const inner = (
     <div className="relative flex flex-col h-full">
-      <div className="flex-1 bg-[#F2F2F2] min-h-0" />
+      <div className="relative flex-1 bg-[#F2F2F2] min-h-0">
+        {venture.image ? (
+          <Image
+            src={venture.image}
+            alt={`${venture.name} logo`}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 720px) 33vw, 220px"
+          />
+        ) : null}
+      </div>
       {venture.href && (
         <span className="absolute top-2.5 right-2.5 text-muted">
           <ExternalLinkIcon />
         </span>
       )}
       <div className="p-3 bg-white">
-        <p className="text-[13px] font-medium text-text">{venture.name}</p>
-        <p className="text-[11px] text-muted mt-0.5 leading-snug line-clamp-2">
+        <p className="text-[18px] font-medium text-text leading-tight">{venture.name}</p>
+        <p className="text-[14px] text-muted mt-1 leading-snug line-clamp-2">
           {venture.description}
         </p>
       </div>

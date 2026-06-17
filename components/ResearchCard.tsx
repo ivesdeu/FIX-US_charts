@@ -12,7 +12,7 @@ function ArrowRight() {
 }
 
 function RatingBadge({ rating }: { rating: ResearchRow["rating"] }) {
-  if (!rating) return <span className="text-[10px] text-muted">—</span>;
+  if (!rating) return <span className="text-[12px] text-muted">—</span>;
 
   const styles: Record<string, string> = {
     SELL: "bg-text text-white",
@@ -21,7 +21,7 @@ function RatingBadge({ rating }: { rating: ResearchRow["rating"] }) {
   };
 
   return (
-    <span className={`text-[10px] font-medium px-1.5 py-px rounded ${styles[rating]}`}>
+    <span className={`text-[12px] font-medium px-2 py-0.5 rounded ${styles[rating]}`}>
       {rating}
     </span>
   );
@@ -33,14 +33,14 @@ function ResearchRowItem({ row }: { row: ResearchRow }) {
       href={row.pdfHref}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 py-1.5 group"
+      className="flex items-center gap-2 py-2 group"
     >
-      <span className="shrink-0 font-mono text-[10px] bg-text text-white px-1 py-px rounded">
+      <span className="shrink-0 font-mono text-[12px] bg-text text-white px-1.5 py-0.5 rounded">
         {row.ticker}
       </span>
       <div className="flex-1 min-w-0">
-        <p className="text-[12px] font-medium text-text truncate">{row.company}</p>
-        <p className="text-[11px] text-muted italic truncate">{row.thesis}</p>
+        <p className="text-[15px] font-medium text-text truncate">{row.company}</p>
+        <p className="text-[13px] text-muted italic truncate">{row.thesis}</p>
       </div>
       <div className="flex items-center gap-1.5 shrink-0">
         <RatingBadge rating={row.rating} />

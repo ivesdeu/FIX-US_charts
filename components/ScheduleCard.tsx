@@ -22,7 +22,7 @@ export default function ScheduleCard({ className = "" }: { className?: string })
         href={SITE.calUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[12px] font-medium text-text hover:text-muted transition-colors mt-auto leading-snug"
+        className="text-[18px] font-medium text-text hover:text-muted transition-colors mt-auto leading-tight"
       >
         cal.com / {slug}
       </a>
