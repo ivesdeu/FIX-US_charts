@@ -114,10 +114,6 @@ export function GlobeCdn({
   }, [handlePointerUp]);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
-    if (!canvas || !container) return;
-
     let globe: ReturnType<typeof createGlobe> | null = null;
     let animationId: number;
     let phi = 0;
@@ -132,7 +128,7 @@ export function GlobeCdn({
       currentSize = 0;
     }
 
-    function initGlobe(size: number) {
+    function initGlobe(canvas: HTMLCanvasElement, size: number) {
       if (size === 0 || size === currentSize) return;
 
       destroyGlobe();
@@ -178,11 +174,18 @@ export function GlobeCdn({
     }
 
     function measureAndInit() {
+      const canvas = canvasRef.current;
+      const container = containerRef.current;
+      if (!canvas || !container) return;
+
       const size = container.clientWidth;
       if (size > 0 && container.clientHeight > 0) {
-        initGlobe(size);
+        initGlobe(canvas, size);
       }
     }
+
+    const container = containerRef.current;
+    if (!container) return;
 
     const ro = new ResizeObserver(() => {
       requestAnimationFrame(measureAndInit);
