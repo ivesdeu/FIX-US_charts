@@ -32,13 +32,13 @@ export const RESEARCH: ResearchRow[] = [
       "~70% downside; HVAC premium unsupported by model.",
     rating: "SELL",
     date: "June 2025",
-    pdfHref: "/research/fix-report.pdf",
+    pdfHref: "/research/comfort-systems-stock-pitch.pdf",
   },
   {
     ticker: "ABBV",
     company: "AbbVie",
-    thesis: "Buy thesis",
-    rating: "BUY",
+    thesis: "Pending thesis",
+    rating: null,
     date: "May 2025",
     pdfHref: "/research/abbv-report.pdf",
   },
@@ -48,7 +48,7 @@ export const RESEARCH: ResearchRow[] = [
     thesis: "Sell thesis",
     rating: "SELL",
     date: "May 2025",
-    pdfHref: "/research/lulu-report.pdf",
+    pdfHref: "/research/lululemon-research-report.pdf",
   },
 ];
 
