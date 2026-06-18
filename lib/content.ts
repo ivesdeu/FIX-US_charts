@@ -1,3 +1,5 @@
+export const FORM_NOTIFICATION_EMAIL = "mark.deutscmn@gmail.com";
+
 export const SITE = {
   name: "Mark Deutschmann",
   descriptor: "MSF · Investment Management Certificate Program · Founder",

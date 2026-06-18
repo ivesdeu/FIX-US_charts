@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Card from "@/components/Card";
+import { submitForm } from "@/lib/submitForm";
 
 function BookmarkIcon() {
   return (
@@ -45,13 +46,7 @@ export default function NewsletterCard({ className = "" }: { className?: string 
     e.preventDefault();
     const form = e.currentTarget;
 
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(
-        new FormData(form) as unknown as Record<string, string>
-      ).toString(),
-    });
+    await submitForm(form, "Newsletter signup");
 
     setEmail("");
     setSubmitted(true);

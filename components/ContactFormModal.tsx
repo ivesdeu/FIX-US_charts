@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { submitForm } from "@/lib/submitForm";
 
 type ContactFormModalProps = {
   open: boolean;
@@ -41,13 +42,7 @@ export default function ContactFormModal({ open, onClose }: ContactFormModalProp
     e.preventDefault();
     const form = e.currentTarget;
 
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(
-        new FormData(form) as unknown as Record<string, string>
-      ).toString(),
-    });
+    await submitForm(form, "Portfolio contact form");
 
     setSubmitted(true);
   }
