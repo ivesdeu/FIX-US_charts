@@ -14,6 +14,16 @@ import { VENTURES } from "@/lib/content";
 export default function Home() {
   return (
     <main className="max-w-[720px] mx-auto px-5 pb-6">
+      {/* Netlify form detection */}
+      <form name="contact" data-netlify="true" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message" />
+      </form>
+      <form name="newsletter" data-netlify="true" hidden>
+        <input type="email" name="email" />
+      </form>
+
       <HeroCard />
 
       <div className="bento-grid">

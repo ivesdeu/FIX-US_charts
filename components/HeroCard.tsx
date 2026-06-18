@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ContactFormModal from "@/components/ContactFormModal";
 import { SITE } from "@/lib/content";
 
 function formatDate(d: Date) {
@@ -33,6 +34,7 @@ function LinkedInIcon() {
 
 export default function HeroCard() {
   const [time, setTime] = useState("");
+  const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(() => {
     setTime(formatDate(new Date()));
@@ -84,6 +86,17 @@ export default function HeroCard() {
           </svg>
           Resume
         </a>
+        <button
+          type="button"
+          onClick={() => setContactOpen(true)}
+          className="flex items-center gap-1.5 px-3 h-9 border border-border rounded-lg text-[13px] font-medium text-text hover:bg-[#FAFAFA] transition-colors"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          Contact
+        </button>
         <a
           href={SITE.linkedin}
           target="_blank"
@@ -94,6 +107,8 @@ export default function HeroCard() {
           <LinkedInIcon />
         </a>
       </div>
+
+      <ContactFormModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </section>
   );
 }

@@ -39,9 +39,22 @@ function ArrowUpIcon() {
 
 export default function NewsletterCard({ className = "" }: { className?: string }) {
   const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(
+        new FormData(form) as unknown as Record<string, string>
+      ).toString(),
+    });
+
+    setEmail("");
+    setSubmitted(true);
   }
 
   return (
@@ -57,14 +70,23 @@ export default function NewsletterCard({ className = "" }: { className?: string 
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="mt-1.5 shrink-0">
+      <form
+        name="newsletter"
+        method="POST"
+        data-netlify="true"
+        onSubmit={handleSubmit}
+        className="mt-1.5 shrink-0"
+      >
+        <input type="hidden" name="form-name" value="newsletter" />
         <div className="flex items-center gap-1.5 bg-tag-bg rounded-full pl-2.5 pr-0.5 py-0.5">
           <MailIcon />
           <input
             type="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="name@email.com"
+            required
             className="flex-1 min-w-0 bg-transparent text-[12px] text-text placeholder:text-muted outline-none"
           />
           <button
@@ -75,6 +97,9 @@ export default function NewsletterCard({ className = "" }: { className?: string 
             <ArrowUpIcon />
           </button>
         </div>
+        {submitted ? (
+          <p className="text-[11px] text-muted mt-1.5">Thanks for subscribing.</p>
+        ) : null}
       </form>
     </Card>
   );
